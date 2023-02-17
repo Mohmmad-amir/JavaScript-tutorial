@@ -36,26 +36,35 @@ if (testSCore >= 90) {
     }
 }
 // console.log(grade);
-
+// *decision tree
+let playerOne = true;
+let computer;
 
 if (playerOne === computer) {
     //tie game
+    console.log("tie Game");
 } else if (playerOne === "rock") {
     if (computer === "paper") {
         //computer wins
+        console.log("Computer wins");
     } else {
         // playerOne wins
+        console.log("playerOne wins");
     }
 } else if (playerOne === "paper") {
     if (computer === "scissors") {
         //computer wins
+        console.log("Computer wins");
     } else {
         //playerOne wins
+        console.log("playerOne wins");
     }
 } else {
     if (computer === "rock") {
-        //computer wind
+        //computer wins
+        console.log("Computer wins");
     } else {
         //playerOne wins
+        console.log("playerOne wins");
     }
 }
