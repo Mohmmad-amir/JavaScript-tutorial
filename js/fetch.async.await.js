@@ -151,11 +151,44 @@ const requestJoke = async (firstName, lastName) => {
     console.log(jsonRequestJoke.value.joke);
 }
 
-requestJoke("bruce", "lee")
+// requestJoke("bruce", "lee")
 
+// * abstract into function
+// * maybe from a form
 
+const getDataFromForm = () => {
+    const requestObj = {
+        firstName: "Bruce",
+        lastName: "Lee",
+        categories: ["nerdy"]
+    };
+    return requestObj
+}
 
+const buildRequestUrl = (requestData) => {
+    return `http://api.icndb.com/jokes/random?firstName=${requestData.firstName}&lastName=${requestData.lastName}&limitTo=${requestData.categories}`
 
+}
+
+const newRequestJoke = async (url) => {
+    const responseNewRequestJoke = await fetch(url)
+    const jsonNewRequestJoke = await responseNewRequestJoke.json()
+    const newJoke = jsonNewRequestJoke.value.joke;
+    postJokeToPage(joke)
+}
+
+const postJokeToPage = (joke) => {
+    console.log(joke);
+}
+// procedural workFlow function
+const processJokeRequest = async () => {
+    const requestDataNew = getDataFromForm();
+    const requestUrl = buildRequestUrl(requestDataNew);
+    await requestJoke(requestUrl);
+    console.log("finished");
+}
+
+processJokeRequest();
 
 
 
