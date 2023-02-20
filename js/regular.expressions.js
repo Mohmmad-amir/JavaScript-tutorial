@@ -30,10 +30,12 @@ document.getElementById("textForm").addEventListener("submit", (ev) => {
     const regex = / {2,}/g;
     const newText = input.value.replaceAll(regex, " ").trim();
     console.log(newText);
+    // this is encode function from plain text
     const encodedInputText = encodeURI(input.value);
     const encodedCleanText = encodeURI(newText);
     console.log(encodedInputText);
     console.log(encodedCleanText);
+    // this is decode function from encoded value
     const decodeText = decodeURI(encodedInputText)
     console.log(decodeText);
 })
