@@ -19,3 +19,14 @@ main{
 h1{
     font-size: 250%;
 }
+.phoneFormat{
+    display: none;
+    text-align: center;
+    font-size: 0.75rem;
+}
+.block{
+    display: block;
+}
+.invalid{
+    color:red
+}
